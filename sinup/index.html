@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+		*{
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			font-family: monospace;
+		}
+		body
+		{
+			background-image: radial-gradient(rgb(243, 243, 243),  rgb(196, 196, 196)  );
+		}
+      form {
+        border: 0.2px solid gray;
+		margin: 10px;
+		width: 25%;
+		text-align: center;
+		margin: 10% auto ;
+		background-image: linear-gradient(rgb(134, 133, 133),rgb(181, 182, 180) );
+		box-shadow: 10px 10px 10px gray;
+		height: 550px;
+      }
+	  table
+	  {
+		/* border: 5px solid green; */
+		  margin: auto;
+	  }
+	  .npt-col2
+	  {
+		  width: 100%;
+	  }
+	  td
+	  {
+		  padding: 10px;
+	  }
+	  .npt
+	  {
+		  height: 40px;
+		  padding: 10px;
+		  border: none;
+		  border-radius: 8px;
+		  
+	  }
+	  label
+	  {
+		  color: rgb(56, 56, 56);
+		  font-weight: bold;
+		  letter-spacing: 1px;
+		  /* border: 2px solid rgb(0, 0, 0); */
+		  /* background-color: rgb(255, 255, 255); */
+		  
+	  }
+	  ::placeholder
+	  {
+		  font-weight: 700;
+		  letter-spacing: 0.5px;
+		  color: rgb(117, 117, 117);
+		  /* line-height: 2; */
+	  }
+	  .npt8
+	  {
+		  background-image: linear-gradient(rgb(235, 235, 235), rgb(255, 255, 255));
+	  }
+	  .npt:focus
+	  {
+		  background-image: linear-gradient(rgba(249, 252, 251, 0.705), rgb(230, 230, 230));
+	  }
+	  legend
+	  {
+		  letter-spacing: 5px;
+		  line-height: 5px;
+		  font-weight: bold;
+		  padding: 20px;
+		  color: rgb(255, 255, 255);
+	  }
+	  #hh
+	  {
+		  color: red;
+	  }
+	  #hf
+	  {
+		  color:green;
+	  }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <form autocomplete="off">
+        <table>
+			<legend><h1>Login</h1></legend>
+          <tr>
+            <td><input type="text" id="npt1" class="npt1 npt"  placeholder="First Name" /></td>
+            <td><input type="text" id="npt2" class="npt2 npt" placeholder="Last Name" /></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="text" id="npt3" class="npt3 npt npt-col2" autocomplete="off" placeholder="ID User" /></td>
+		  </tr>
+		  <tr>
+			  <td colspan="2"><input type="password" id="npt4" class="npt4 npt npt-col2" autocomplete="off" placeholder="Password"></td>
+		  </tr>
+		  <tr>
+			  <td colspan="2"><input type="password" id="npt5" class="npt5 npt npt-col2" name="name" autocomplete="off" required placeholder="Password Again"></td>
+		  </tr>
+		  <tr>
+			  <td><label for="nn" class="npt">  Your Birthday</label></td>
+			  <td colspan=""><input type="date" class="npt6 npt npt-col2" placeholder=" data" id="nn"></td>
+		  </tr>
+		  <tr>
+			  <td>
+				  <label  for="male">Male</label>
+				  <input name="sd" type="radio" id="male">
+				  
+			  </td>
+			  <td>
+				  <label for="female">Female</label>
+				  <input  name="sd" type="radio" id="female">
+			  </td>
+		  </tr>
+		  <tr>
+			  <td colspan="1"><input type="submit" value="Submit" onclick="sub()" class="npt8 npt npt-col2"></td>
+			  <td colspan="1"><input type="reset" value="Rest" class="npt8 npt npt-col2"></td>
+		  </tr>
+		  <tr>
+			  <td colspan="2"><h2 id="hh"></h2> <h2 id="hf"></h2></td>
+		  </tr>
+        </table>
+      </form>
+	</header>
+	<script>
+		function sub()
+		{
+			var firstName = document.getElementById("npt1").value,
+				lastName = document.getElementById("npt2").value,
+				ID = document.getElementById("npt3").value,
+				pass = document.getElementById("npt4").value,
+				passG = document.getElementById("npt5").value;
+		if ((firstName != "" || lastName != "") && ID != "" && pass !="" && passG !="")
+		{
+			document.getElementById("hf").innerHTML = "The Process Successful"
+			alert("Welcome")
+			return;
+		}
+		else
+		{
+			document.getElementById("hh").innerHTML = "Please Full The Inputs"
+			alert("You Forget Something Please Full  inputs")
+			return;
+		}
+		}
+	</script>
+  </body>
+</html>
